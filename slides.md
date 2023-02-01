@@ -3,7 +3,7 @@
 theme: seriph
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: ./images/blue-circle.png
+background: /images/blue-circle.png
 # apply any windi css classes to the current slide
 class: 'text-center'
 # https://sli.dev/custom/highlighters.html
@@ -44,7 +44,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 layout: image-right
-image: ./images/yellow-circle.png
+image: /images/yellow-circle.png
 ---
 
 # Table of contents
@@ -74,36 +74,41 @@ h1 {
 }
 </style>
 
-
-
 <!--
 Here is another comment.
 -->
 
 ---
-transition: slide-up
+layout: two-cols
 ---
 
-# Navigation
+# Hexagonal architecture
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+<img src="/images/clean-architecture.png" class="h-80 rounded shadow" />
 
-### Keyboard Shortcuts
+::right::
 
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
+<ul class="pl-8 mt-16">
+<li>Hexagonal architecture/Clean architecture/onion architecture: same idea under many names<br/></li>
+<li>Domain logic should be in it's own dedicated layer<br/></li>
+<li>Domain layer does not depend on any other layer (may demand dependency inversion)<br/></li>
+<li>Ports/adapters pattern that let's change other layer easily (SQL to elascticSearch, REST to graphQL, etc...)<br/></li>
+</ul>
 
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+
+<style>
+h1 {
+  background-color: #00ADD0;
+  font-weight: 500;
+  font: metric-light;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
 
 ---
 layout: image-right
