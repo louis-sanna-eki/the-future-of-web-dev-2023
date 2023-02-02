@@ -3,5 +3,10 @@
     {
       "path": "."
     }
-  ]
+  ],
+  "settings": {
+    "yaml.schemas": {
+      "https://json.schemastore.org/github-workflow.json": "file:///Users/louis.sanna/git/front-unit-tests-slides/.github/workflows/deploy.yml"
+    }
+  }
 }

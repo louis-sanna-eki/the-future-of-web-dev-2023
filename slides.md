@@ -23,8 +23,7 @@ drawings:
 transition: fade-out
 # use UnoCSS
 css: unocss
-fonts: 
-  sans: metric-light
+download: true
 ---
 
 # Unit testing on the frontend
