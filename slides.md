@@ -3,7 +3,7 @@
 theme: seriph
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: /images/blue-circle.png
+background: images/blue-circle.png
 # apply any windi css classes to the current slide
 class: 'text-center'
 # https://sli.dev/custom/highlighters.html
@@ -43,7 +43,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 layout: image-right
-image: /images/yellow-circle.png
+image: images/yellow-circle.png
 ---
 
 # Table of contents
