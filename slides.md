@@ -52,7 +52,7 @@ image: images/yellow-circle.png
 - Separating the state for rest
 - Testing the store
 - Presentational component vs container component
-- Testing libs for react: vitest, react testing library, Mock Server Worker
+- Testing libs for react: Vitest, React Testing Library, Mock Server Worker
 - Links
 
 <!--
@@ -61,15 +61,8 @@ Learn more: https://sli.dev/guide/syntax#embedded-styles
 -->
 
 <style>
-h1 {
-  background-color: #00ADD0;
-  font-weight: 500;
-  font: metric-light;
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
+.slidev-layout h1 {
+  color: #00ADD0;
 }
 </style>
 
@@ -167,7 +160,7 @@ async function getReviewsByRating({ reviewFilters} : { reviewFilters: ReviewFilt
 
 <div class="grid grid-cols-2 gap-4">
 <div>
-<Tweet id="1092424711655567360" scale="0.65"/>
+<Tweet id="1092424711655567360" scale="0.65" />
 </div>
 <div>
 
@@ -227,7 +220,7 @@ function useNewFeedback({
 
 <br/>
 
-- Service handling HTTP request to backend
+- Service handling HTTP requests to backend
 
 <style>
 .slidev-layout h1 {
@@ -267,7 +260,7 @@ function IncorrectBrandName(): JSX.Element {
 
 <br/>
 
-- View contains presentional logic
+- View contains presentational logic
 - It can (and should IMO) contain its own state
 
 <style>
@@ -390,13 +383,12 @@ describe('useFeedbackStore', () => {
 
 <div class="grid grid-cols-2 gap-4">
 <div>
-<Tweet id="1092885279256576000" scale="0.65"/>
+<Tweet id="1092885279256576000" scale="0.65" />
 </div>
 <div>
 
-- UI is critical in the value created by our application, there is not a single CLI interface with mass-adoption. And it can be very complicated, much more complex that query handlers for instance. So it's mistake to treat it as an implementation detail.
-- State != business logic. For today's professionals, UIs define their domain. Imagine an business analyst working an Excel with a CLI...
-- Dogmatic separation of state/presentation can create useless boilerplate. Simple components can (and should) own their own state/presentation.
+- UI is critical in the value created by our application, there is not a single CLI interface with mass-adoption. And it can be very complicated, much more complex that query handlers for instance. So it's mistake to treat UI as an implementation detail.
+- Dogmatic separation of state/presentation can create artificial boundaries. Simple components can (and should) own their own state/presentation.
 
 </div>
 </div>
