@@ -160,46 +160,36 @@ async function getReviewsByRating({ reviewFilters} : { reviewFilters: ReviewFilt
 </style>
 
 ---
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
 ---
 
-# Code
+# Hexagonal on the front-end: the UI as an afterthought
 
-Use code snippets and get the highlighting directly![^1]
 
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
+<div class="grid grid-cols-2 gap-4">
+<div>
+<Tweet id="1092424711655567360" scale="0.65"/>
+</div>
+<div>
 
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = { ...user, ...update }
-  saveUser(id, newUser)
-}
-```
+- The core idea: remove all UI and query from the domain logic. Imagine that there are two way to interact with app, UI or CLI. The core logic should not be duplicated.
+- All HTTP calls (Web sockets, ...) should be extracted to dedicated services
+- UI interfaces extracted to presentational components
+- So in practice the domain logic ends up identified to with the application global state (WARNING: this may an abuse of language)
 
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
+</div>
+</div>
 
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
 
 <style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
+.slidev-layout h1 {
+  color: #00ADD0;
 }
 </style>
 
 ---
+---
+
+
 
 # Components
 
