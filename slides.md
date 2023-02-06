@@ -448,3 +448,35 @@ describe('useFeedbackStore', () => {
 }
 </style>
 
+
+---
+---
+
+# Headless libraries
+
+<br/>
+Some libraries only handle the stateful portion of the components, with the presentational layer.
+<br/>
+<br/>
+
+<img src="/images/tanstack-table.png" class="h-40 rounded shadow m-auto" />
+
+<br/>
+See tanstack Table, which in React is a simple hook:
+
+<br/>
+<br/>
+```tsx
+const table = useReactTable({
+  data,
+  columns,
+  getCoreRowModel: getCoreRowModel(),
+})
+```
+
+<style>
+.slidev-layout h1 {
+  color: #00ADD0;
+}
+</style>
+
