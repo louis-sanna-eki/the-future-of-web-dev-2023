@@ -191,8 +191,6 @@ async function getReviewsByRating({ reviewFilters} : { reviewFilters: ReviewFilt
 
 # Hexagonal on the front-end: the feedback module example
 
-
-
 <div class="grid grid-cols-2 gap-4">
   <div>
     <img src="/images/feedback-modal.png" class="h-80 rounded shadow" />
@@ -211,8 +209,6 @@ async function getReviewsByRating({ reviewFilters} : { reviewFilters: ReviewFilt
 
 ---
 ---
-
-
 
 # The feedback module example: an HTTP service
 
@@ -241,7 +237,6 @@ function useNewFeedback({
 
 ---
 ---
-
 
 # The feedback module example: a view
 
@@ -381,6 +376,30 @@ describe('useFeedbackStore', () => {
 
 - We test the use-case on the store of the module global state
 - Remark: we did NOT test the use-case hook directly. That would could the test to the implementation, leading use to write more tests covering less code.
+
+<style>
+.slidev-layout h1 {
+  color: #00ADD0;
+}
+</style>
+
+---
+---
+
+# Limitations
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+<Tweet id="1092885279256576000" scale="0.65"/>
+</div>
+<div>
+
+- UI is critical in the value created by our application, there is not a single CLI interface with mass-adoption. And it can be very complicated, much more complex that query handlers for instance. So it's mistake to treat it as an implementation detail.
+- State != business logic. For today's professionals, UIs define their domain. Imagine an business analyst working an Excel with a CLI...
+- Dogmatic separation of state/presentation can create useless boilerplate. Simple components can (and should) own their own state/presentation.
+
+</div>
+</div>
 
 <style>
 .slidev-layout h1 {
