@@ -94,20 +94,70 @@ layout: two-cols
 <li>Ports/adapters pattern that let's change other layer easily (SQL to elascticSearch, REST to graphQL, etc...)<br/></li>
 </ul>
 
-
 <style>
-h1 {
-  background-color: #00ADD0;
-  font-weight: 500;
-  font: metric-light;
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
+.slidev-layout h1 {
+  color: #00ADD0;
 }
 </style>
 
+
+---
+---
+
+# Clean architecture on the backend
+
+
+```ts {all|1|2-6|9|all}
+async function sendFeedbackController(request: Request, response: Response): Promise<void> {
+  const feedback = z
+    .object({
+      payload: z.any(),
+      type: feedbackTypeSchema,
+    })
+    .parse(request.body);
+  const user = parseAuthenticatedUser(response);
+  await sendFeedback({ feedback, user });
+  response.send({});
+}
+```
+
+- On the backend, we remove request handling and db logic from domain services (handlers and repositories)
+- See above the handler above that parse the request, calls a domain service, then send the response
+
+
+<style>
+.slidev-layout h1 {
+  color: #00ADD0;
+}
+</style>
+
+---
+---
+
+# Service can change database with a repository
+
+<br/>
+```ts {all|1|2-4|5-9|all}
+async function getReviewsByRating({ reviewFilters} : { reviewFilters: ReviewFilters }): Promise<Aggs[]> {
+  if (elasticRepository.hasReviewIndex()) {
+    return elasticRepository.aggregateReviewsByRating({ reviewFilters });
+  }
+  return SQLrepository.aggregateReviews({
+    reviewFilters,
+    attributes: ['rating', [Sequelize.literal('COUNT(DISTINCT(reviews.id))'), 'count']],
+    group: ['rating'],
+  });
+}
+```
+
+- Repository pattern: create a dedicated module to handle db logic. Quite heavy, but let's us switch from one database to another easily.
+- Remark: this does respect Clean Architecture by the letter. No dependency inversion was done, and SQL syntax leaks out of SQL repository.
+
+<style>
+.slidev-layout h1 {
+  color: #00ADD0;
+}
+</style>
 
 ---
 layout: image-right
