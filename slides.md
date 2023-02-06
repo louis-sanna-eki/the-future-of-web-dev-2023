@@ -24,6 +24,7 @@ transition: fade-out
 # use UnoCSS
 css: unocss
 download: https://louis-sanna-eki.github.io/front-unit-tests-slides/export/unit_testing_on_the_frontend.pdf
+favicon: images/eki-favicon.png
 ---
 
 # Unit testing on the frontend
@@ -37,9 +38,6 @@ Extract the state, test the state
 </div>
 
 
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
 
 ---
 layout: image-right
@@ -52,23 +50,8 @@ image: images/yellow-circle.png
 - Separating the state for rest
 - Testing the store
 - Presentational component vs container component
-- Testing libs for react: Vitest, React Testing Library, Mock Server Worker
+- Testing librairies for react: Vitest, React Testing Library, Mock Server Worker
 - Links
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
-
-<style>
-.slidev-layout h1 {
-  color: #00ADD0;
-}
-</style>
-
-<!--
-Here is another comment.
--->
 
 ---
 layout: two-cols
@@ -86,13 +69,6 @@ layout: two-cols
 <li>Domain layer does not depend on any other layer (may demand dependency inversion)<br/></li>
 <li>Ports/adapters pattern that let's change other layer easily (SQL to elascticSearch, REST to graphQL, etc...)<br/></li>
 </ul>
-
-<style>
-.slidev-layout h1 {
-  color: #00ADD0;
-}
-</style>
-
 
 ---
 ---
@@ -117,17 +93,10 @@ async function sendFeedbackController(request: Request, response: Response): Pro
 - On the backend, we remove request handling and db logic from domain services (handlers and repositories)
 - See above the handler above that parse the request, calls a domain service, then send the response
 
-
-<style>
-.slidev-layout h1 {
-  color: #00ADD0;
-}
-</style>
-
 ---
 ---
 
-# Service can change database with a repository
+# Repository pattern: makes database change much easier
 
 <br/>
 ```ts {all|1|2-4|5-9|all}
@@ -143,14 +112,8 @@ async function getReviewsByRating({ reviewFilters} : { reviewFilters: ReviewFilt
 }
 ```
 
-- Repository pattern: create a dedicated module to handle db logic. Quite heavy, but let's us switch from one database to another easily.
-- Remark: this does respect Clean Architecture by the letter. No dependency inversion was done, and SQL syntax leaks out of SQL repository.
-
-<style>
-.slidev-layout h1 {
-  color: #00ADD0;
-}
-</style>
+- Repository pattern: create a dedicated module to handle db logic. Quite heavy, but lets us switch from one database to another easily.
+- Remark: this does NOT respect Clean Architecture by the letter. Dependency inversion wasn't done, and the SQL syntax leaks out of the SQL repository.
 
 ---
 ---
@@ -164,20 +127,13 @@ async function getReviewsByRating({ reviewFilters} : { reviewFilters: ReviewFilt
 </div>
 <div>
 
-- The core idea: remove all UI and query from the domain logic. Imagine that there are two way to interact with app, UI or CLI. The core logic should not be duplicated.
+- The core idea: remove all UI and query from the domain logic. Imagine that there are two ways to interact with app, UI or CLI. The core logic should not be duplicated.
 - All HTTP calls (Web sockets, ...) should be extracted to dedicated services
 - UI interfaces extracted to presentational components
 - So in practice the domain logic ends up identified to with the application global state (WARNING: this may an abuse of language)
 
 </div>
 </div>
-
-
-<style>
-.slidev-layout h1 {
-  color: #00ADD0;
-}
-</style>
 
 ---
 ---
@@ -192,13 +148,6 @@ async function getReviewsByRating({ reviewFilters} : { reviewFilters: ReviewFilt
     <img src="/images/feedback-module.png" class="h-80 rounded shadow" />
   </div>
 </div>
-
-
-<style>
-.slidev-layout h1 {
-  color: #00ADD0;
-}
-</style>
 
 ---
 ---
@@ -221,12 +170,6 @@ function useNewFeedback({
 <br/>
 
 - Service handling HTTP requests to backend
-
-<style>
-.slidev-layout h1 {
-  color: #00ADD0;
-}
-</style>
 
 ---
 ---
@@ -263,12 +206,6 @@ function IncorrectBrandName(): JSX.Element {
 - View contains presentational logic
 - It can (and should IMO) contain its own state
 
-<style>
-.slidev-layout h1 {
-  color: #00ADD0;
-}
-</style>
-
 ---
 ---
 
@@ -297,12 +234,6 @@ function useFeedbackStore({
   return { ... };
 }
 ```
-
-<style>
-.slidev-layout h1 {
-  color: #00ADD0;
-}
-</style>
 
 ---
 ---
@@ -334,12 +265,6 @@ function useFeedbackHistory(): IFeedbackHistory {
 - Navigation use-case: the user may go back to previous view, or back to start
 - Use-case is extracted in its dedicated hook
 
-<style>
-.slidev-layout h1 {
-  color: #00ADD0;
-}
-</style>
-
 ---
 ---
 
@@ -370,11 +295,6 @@ describe('useFeedbackStore', () => {
 - We test the use-case on the store of the module global state
 - Remark: we did NOT test the use-case hook directly. That would could the test to the implementation, leading use to write more tests covering less code.
 
-<style>
-.slidev-layout h1 {
-  color: #00ADD0;
-}
-</style>
 
 ---
 ---
@@ -393,16 +313,10 @@ describe('useFeedbackStore', () => {
 </div>
 </div>
 
-<style>
-.slidev-layout h1 {
-  color: #00ADD0;
-}
-</style>
-
 ---
 ---
 
-# Why does it work? Human/machine have different strength
+# Why does it work? Human/machine have different strengths
 
 
 |   case/tester  | Human     |  Machine    |
@@ -412,14 +326,8 @@ describe('useFeedbackStore', () => {
 
 <br/>
 
-- Humans visual capabilities are very advanced. So we can detect visual bugs very easily without any automated testing. But we do struggle to check that algorithms correctly implement all business logic
+- Humans visual capabilities are very advanced. We can detect visual bugs very easily without any automated testing. But we do struggle to check that algorithms correctly implement business logic.
 - The reverse is true for machines. So the highest ROI testing strategy is to extract the state/BL logic to test automatically, and check visually that the UI is correct.
-
-<style>
-.slidev-layout h1 {
-  color: #00ADD0;
-}
-</style>
 
 ---
 ---
@@ -432,13 +340,8 @@ describe('useFeedbackStore', () => {
 <br/>
 
 - Famous article distinguishing presentation components (mainly UI) from container components (mainly state)
+- old nomenclature: smart vs dumb
 - Remark: don't be dogmatic, use hooks, etc...
-
-<style>
-.slidev-layout h1 {
-  color: #00ADD0;
-}
-</style>
 
 
 ---
@@ -447,7 +350,7 @@ describe('useFeedbackStore', () => {
 # Headless libraries
 
 <br/>
-Some libraries only handle the stateful portion of the components, with the presentational layer.
+Some libraries only handle the stateful portion of the components. There are called "headless" libraries.
 <br/>
 <br/>
 
@@ -479,12 +382,6 @@ const table = useReactTable({
 
 - Mock service worker - intercept HTTP calls to avoid mocking
 <img src="/images/msw.png" class="h-20 rounded shadow m-auto mt-2" />
-
-<style>
-.slidev-layout h1 {
-  color: #00ADD0;
-}
-</style>
 
 
 ---
