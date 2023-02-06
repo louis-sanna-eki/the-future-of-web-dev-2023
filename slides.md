@@ -490,26 +490,31 @@ const table = useReactTable({
 ---
 ---
 
-# Links
 
-Architecture:
-
+### Architecture:
 - Clean architecture: https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
 - Presentational and Container Components: https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0
 - UI as an afterthought: https://michel.codes/blogs/ui-as-an-afterthought
+<br/>
+<br/>
 
-React tests:
-- How to test custom React hooks: https://kentcdodds.com/blog/how-to-test-custom-react-hooks
-- Stop mocking fetch: https://kentcdodds.com/blog/stop-mocking-fetch
-
-Libraries:
-
+### Libraries:
 - Mock service worker: https://mswjs.io/
 - React Testing library: https://testing-library.com/
 - Vitest: https://vitest.dev/
+<br/>
+<br/>
 
-<style>
-.slidev-layout h1 {
-  color: #00ADD0;
-}
-</style>
+### React tests:
+- How to test custom React hooks: https://kentcdodds.com/blog/how-to-test-custom-react-hooks
+- Stop mocking fetch: https://kentcdodds.com/blog/stop-mocking-fetch
+
+---
+layout: center
+---
+
+<img src="/images/question-dog.png" with="100%" height="100%" position="absolute" top="0" left="0"/>
+<div position="relative" color="#15293B" top="-200px">
+<b>QUESTIONS AND REMARKS</b>
+</div>
+
