@@ -435,7 +435,7 @@ describe('useFeedbackStore', () => {
 # Presentational components vs container components
 
 
-<img src="images/presentation-vs-container.png" class="h-60 rounded shadow" />
+<img src="/images/presentation-vs-container.png" class="h-60 rounded shadow" />
 
 <br/>
 
