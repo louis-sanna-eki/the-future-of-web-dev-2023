@@ -189,6 +189,172 @@ async function getReviewsByRating({ reviewFilters} : { reviewFilters: ReviewFilt
 ---
 ---
 
+# Hexagonal on the front-end: the feedback module example
+
+
+
+<div class="grid grid-cols-2 gap-4">
+  <div>
+    <img src="/images/feedback-modal.png" class="h-80 rounded shadow" />
+  </div>
+  <div class="pl-12">
+    <img src="/images/feedback-module.png" class="h-80 rounded shadow" />
+  </div>
+</div>
+
+
+<style>
+.slidev-layout h1 {
+  color: #00ADD0;
+}
+</style>
+
+---
+---
+
+
+
+# The feedback module example: an HTTP service
+
+<br/>
+
+```ts
+function useNewFeedback({
+  options = {},
+}: {
+  options?: MutationOptions<Feedback>;
+}): SafeMutation<Feedback> {
+  const mutationFn = usePostMutationFn({ input: `/api/feedback` });
+  return usePostMutation<Feedback>({ options: { mutationFn, ...options } });
+}
+```
+
+<br/>
+
+- Service handling HTTP request to backend
+
+<style>
+.slidev-layout h1 {
+  color: #00ADD0;
+}
+</style>
+
+---
+---
+
+
+# The feedback module example: a view
+
+```tsx {all|2|3|5-21|all}
+function IncorrectBrandName(): JSX.Element {
+  const { brandId, newFeedbackMutation } = useCollaborationContext();
+  const [correctName, setCorrectName] = useState<string>('');
+  if (brandId === null) return <></>;
+  return (
+    <>
+      <Header title="The name is incorrect" />
+      <Body>
+        <TextInput
+          onChange={(event) => setCorrectName(event.target.value)}
+          value={correctName}
+        />
+        <Actions
+          onMainClick={() => sendFeedback({
+              type: 'incorrectBrandName',
+              payload: { brandId, correctName },
+            })}
+        />
+      </Body>
+    </>
+  );
+}
+```
+
+<br/>
+
+- View contains presentional logic
+- It can (and should IMO) contain its own state
+
+<style>
+.slidev-layout h1 {
+  color: #00ADD0;
+}
+</style>
+
+---
+---
+
+# The feedback module example: the store
+
+```tsx
+function useFeedbackStore({
+  params = {},
+  useNewFeedback,
+}: FeedbackStoreProps): IFeedbackStore {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  const historyStore = useFeedbackHistory({});
+  const { view } = historyStore;
+
+  const { reverse, ...navigationMethods } = useReverse(historyStore);
+  const { clearHistory, goBack, goBackToStart } = navigationMethods;
+
+  const { goTo, productId, setProductId, brandId, setBrandId } = useSelection({
+    ...navigationMethods,
+    params,
+  });
+
+  const newFeedbackMutation = useNewFeedback({ options: { onMutate: () => goTo('success') } });
+
+  return { ... };
+}
+```
+
+<style>
+.slidev-layout h1 {
+  color: #00ADD0;
+}
+</style>
+
+---
+---
+
+# The feedback module example: a use-case
+
+```tsx
+function useFeedbackHistory(): IFeedbackHistory {
+  const [viewHistory, setViewHistory] = useState<IView[]>(['root']);
+
+  const view = viewHistory[viewHistory.length - 1];
+
+  const goTo = useCallback((newView) => setViewHistory((previous) => [...previous, newView]), []);
+  const goBack = useMemo(() => {
+    if (viewHistory.length <= 1) return null;
+    return () => setViewHistory((previous) => previous.slice(0, -1));
+  }, [viewHistory.length]);
+  const goBackToStart = useMemo(() => {
+    if (viewHistory.length <= 1) return null;
+    return () => setViewHistory(['root']);
+  }, [viewHistory.length]);
+
+  return { view, goTo, goBack, goBackToStart  };
+}
+```
+
+<br/>
+
+- Navigation use-case: the user may go back to previous view, or back to start
+- Use-case is extracted in its dedicated hook
+
+<style>
+.slidev-layout h1 {
+  color: #00ADD0;
+}
+</style>
+
+---
+---
+
 
 
 # Components
