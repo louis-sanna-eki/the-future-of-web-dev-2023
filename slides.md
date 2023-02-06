@@ -408,6 +408,48 @@ describe('useFeedbackStore', () => {
 </style>
 
 ---
+---
+
+# Why does it work? Human/machine have different strength
+
+
+|   case/tester  | Human     |  Machine    |
+| ------------   | --------- |  ---------  |
+| State machine  |    Bad    |   Very good |            
+| UI             | Very good |     Bad     |
+
+<br/>
+
+- Humans visual capabilities are very advanced. So we can detect visual bugs very easily without any automated testing. But we do struggle to check that algorithms correctly implement all business logic
+- The reverse is true for machines. So the highest ROI testing strategy is to extract the state/BL logic to test automatically, and check visually that the UI is correct.
+
+<style>
+.slidev-layout h1 {
+  color: #00ADD0;
+}
+</style>
+
+---
+---
+
+# Presentational components vs container components
+
+
+<img src="images/presentation-vs-container.png" class="h-60 rounded shadow" />
+
+<br/>
+
+- Famous article distinguishing presentation components (mainly UI) from container components (mainly state)
+- Remark: don't be dogmatic, use hooks, etc...
+
+<style>
+.slidev-layout h1 {
+  color: #00ADD0;
+}
+</style>
+
+
+---
 layout: center
 class: text-center
 ---
