@@ -50,7 +50,7 @@ image: images/yellow-circle.png
 - Separating the state for rest
 - Testing the store
 - Presentational component vs container component
-- Testing librairies for react: Vitest, React Testing Library, Mock Server Worker
+- Testing libraries for react: Vitest, React Testing Library, Mock Server Worker
 - Links
 
 ---
@@ -66,8 +66,8 @@ layout: two-cols
 <ul class="pl-8 mt-16">
 <li>Hexagonal architecture/Clean architecture/onion architecture: same idea under many names<br/></li>
 <li>Domain logic should be in it's own dedicated layer<br/></li>
-<li>Domain layer does not depend on any other layer (may demand dependency inversion)<br/></li>
-<li>Ports/adapters pattern that let's change other layer easily (SQL to elascticSearch, REST to graphQL, etc...)<br/></li>
+<li>Domain layer does not depend on any other layer (may require dependency inversion)<br/></li>
+<li>Ports/adapters pattern that let replace implementation easily (SQL to elascticSearch, REST to graphQL, etc...)<br/></li>
 </ul>
 
 ---
@@ -293,7 +293,7 @@ describe('useFeedbackStore', () => {
 <br/>
 
 - We test the use-case on the store of the module global state
-- Remark: we did NOT test the use-case hook directly. That would could the test to the implementation, leading use to write more tests covering less code.
+- Remark: we did NOT test the use-case hook directly. That would couple the test to the implementation, require more tests, and cover less code.
 
 
 ---
