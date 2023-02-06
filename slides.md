@@ -474,6 +474,20 @@ const table = useReactTable({
 })
 ```
 
+---
+---
+
+# Testing libraries (React)
+
+- Vitest - jest but cooler (and much faster)
+<img src="/images/vitest.png" class="h-20 rounded shadow m-auto mt-2" />
+
+- React Testing library - jsx testing made easy
+<img src="/images/testing-library.png" class="h-20 rounded shadow m-auto mt-2" />
+
+- Mock service worker - intercept HTTP calls to avoid mocking
+<img src="/images/msw.png" class="h-20 rounded shadow m-auto mt-2" />
+
 <style>
 .slidev-layout h1 {
   color: #00ADD0;
