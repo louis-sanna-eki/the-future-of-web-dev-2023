@@ -23,7 +23,7 @@ drawings:
 transition: fade-out
 # use UnoCSS
 css: unocss
-download: true
+download: https://louis-sanna-eki.github.io/front-unit-tests-slides/export/unit_testing_on_the_frontend.pdf
 ---
 
 # Unit testing on the frontend
