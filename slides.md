@@ -211,7 +211,7 @@ function IncorrectBrandName(): JSX.Element {
 
 # The feedback module example: the store
 
-```tsx
+```tsx {all|2|3|5|7-9|10-12|13-16|18|all}
 function useFeedbackStore({
   params = {},
   useNewFeedback,
@@ -299,7 +299,7 @@ describe('useFeedbackStore', () => {
 ---
 ---
 
-# Limitations
+# Limitations - UI is complex and valuable
 
 <div class="grid grid-cols-2 gap-4">
 <div>
@@ -307,7 +307,7 @@ describe('useFeedbackStore', () => {
 </div>
 <div>
 
-- UI is critical in the value created by our application, there is not a single CLI interface with mass-adoption. And it can be very complicated, much more complex that query handlers for instance. So it's mistake to treat UI as an implementation detail.
+- UI is a critical part of the value created by our application. There is not a single CLI interface with mass-adoption. And it can be very complicated, much more complex that query handlers for instance. So it's mistake to treat UI as an implementation detail.
 - Dogmatic separation of state/presentation can create artificial boundaries. Simple components can (and should) own their own state/presentation.
 
 </div>
