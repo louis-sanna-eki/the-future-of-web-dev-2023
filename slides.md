@@ -27,7 +27,7 @@ download: https://louis-sanna-eki.github.io/front-unit-tests-slides/export/unit_
 favicon: images/eki-favicon.png
 ---
 
-# Gen AI projects
+# Gen AI projects knowledge share
 
 Four use-cases using ChatGPT
 
