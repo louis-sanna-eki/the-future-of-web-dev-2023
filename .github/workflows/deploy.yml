@@ -10,8 +10,8 @@ jobs:
           node-version: "16"
       - name: Install dependencies
         run: npm install
-      - name: Install slidev
-        run: npm i -g @slidev/cli
+      - name: Install Slidev and required theme
+        run: npm install -g @slidev/cli @slidev/theme-seriph
       - name: Build
         run: slidev build --base gen-ai-retex-slides
       - name: Deploy pages
@@ -20,3 +20,4 @@ jobs:
           build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
