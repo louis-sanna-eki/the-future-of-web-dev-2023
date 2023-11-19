@@ -27,9 +27,7 @@ download: https://louis-sanna-eki.github.io/front-unit-tests-slides/export/unit_
 favicon: images/eki-favicon.png
 ---
 
-# Unit testing on the frontend
-
-Extract the state, test the state
+# Gen AI projects
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
