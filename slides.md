@@ -195,7 +195,7 @@ def fastapi_app():
 layout: center
 ---
 
-<img src="/images/dog.png" with="100%" height="100%" position="absolute" top="0" left="0"/>
+<img src="/images/cutedog.png" with="100%" height="100%" position="absolute" top="0" left="0"/>
 <div position="relative" color="#15293B" top="-200px">
 </div>
 
