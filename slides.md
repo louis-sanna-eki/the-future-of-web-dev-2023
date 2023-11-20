@@ -27,9 +27,9 @@ download: https://louis-sanna-eki.github.io/gen-ai-retex-slides/export/slides-ex
 favicon: images/eki-favicon.png
 ---
 
-# Gen AI projects knowledge share
+# Exploring Generative AI: Four Innovative Projects
 
-Four use-cases using ChatGPT
+A journey through diverse applications of generative AI, showcasing innovation and versatility.
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -37,21 +37,36 @@ Four use-cases using ChatGPT
   </span>
 </div>
 
-
-
 ---
 layout: image-right
-image: images/yellow-circle.png
+image: /images/table-content.png  # Replace with the actual path to the image
 ---
 
-# Table of contents
+# Table of Contents
 
-- Hexagonal architecture on the front-end
-- Separating the state for rest
-- Testing the store
-- Presentational component vs container component
-- Testing libraries for react: Vitest, React Testing Library, Mock Server Worker
-- Links
+1. **UNESCO AI Chatbot**: Exploring AI-driven communication.
+2. **Connect the Dots**: Integration of AI in team collaboration.
+3. **AnythingQ&A**: Versatile AI-powered question-answering.
+4. **TarotGPT**: Custom AI application in fortune telling.
+
+Explore the innovative applications of generative AI across various domains.
+
+---
+layout: two-cols
+---
+
+# Project 1: UNESCO AI Chatbot
+
+- **Description**: A Gradio chatbot powered by RAG, deployed on Microsoft Azure.
+- **Key Insights**:
+  - Code quality is crucial for reliability.
+  - Flexibility to adapt to client needs (like unplanned demos).
+  - Custom UI, using UNESCO Design System, enhances user engagement.
+- **Demo Link**: [UNESCO AI Chatbot](https://unescoai-dev-webapp-01.azurewebsites.net/)
+
+::right::
+
+<img src="/images/unesco.png" class="h-80 rounded shadow" />
 
 ---
 layout: two-cols
