@@ -3,7 +3,7 @@
 theme: seriph
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: images/blue-circle.png
+background: images/green-ai.png
 # apply any windi css classes to the current slide
 class: 'text-center'
 # https://sli.dev/custom/highlighters.html
@@ -67,6 +67,19 @@ layout: two-cols
 ::right::
 
 <img src="/images/unesco.png" class="h-80 rounded shadow" />
+
+---
+layout: two-cols
+---
+
+## Project 2: Connect the Dots
+
+- **Description**: Teams app featuring a chatbot enriched with SQL and web search capabilities. 
+- **Highlights**:
+  - Utilizes GPT for classification and Named Entity Recognition (NER).
+  - Demonstrates the efficacy of instruct models in NER tasks.
+
+
 
 ---
 layout: two-cols
