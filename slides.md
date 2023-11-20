@@ -86,7 +86,7 @@ layout: two-cols
 ---
 ---
 
-# Classifier with GPT-3.5 Turbo Instruct
+# Classifier with GPT-3.5-turbo-instruct
 
 ```python
 def classify(features, labels):
@@ -143,6 +143,53 @@ layout: two-cols
 ::right::
 
 <img src="/images/tarotgpt.png" class="h-80 rounded shadow ml-16" />
+
+---
+layout: two-cols
+---
+
+# FastAPI, OpenAPI, and Modal Deployment
+
+- FastAPI leverages OpenAPI for automatic API documentation, validation, and serialization. Deployed with Modal, it offers a seamless and scalable cloud function service.
+
+- **Highlights**
+  - FastAPI: An efficient web framework for building APIs with Python 3.7+.
+  - OpenAPI: Used for generating a user-friendly interactive API documentation.
+  - Modal: Enables the deployment of FastAPI as a cloud function with minimal configuration.
+- **Demo Link**: [FastAPI](https://louis-sanna-perso--agent-fastapi-app.modal.run/docs)
+
+::right::
+
+<img src="/images/openapi.png" class="h-80 rounded shadow ml-4" />
+
+---
+---
+
+# Modal Deployment
+
+```python
+from fastapi import FastAPI, HTTPException
+import modal
+
+app = FastAPI(servers=[{
+    "url": "https://your-fastapi-app.modal.run", 
+    "description": "Production server"
+}])
+
+@app.get("/tarot/reading/")
+async def tarot_reading(num_cards: int = 3):
+    # Tarot reading logic
+    ...
+
+# Modal deployment
+stub = modal.Stub("agent")
+image = modal.Image.debian_slim().pip_install("fastapi", "httpx")
+
+@stub.function(image=image, keep_warm=1)
+@modal.asgi_app()
+def fastapi_app():
+    return app
+```
 
 ---
 layout: center
