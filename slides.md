@@ -84,6 +84,35 @@ layout: two-cols
 <img src="/images/ctd.png" class="h-80 rounded shadow" />
 
 ---
+---
+
+# Classifier with GPT-3.5 Turbo Instruct
+
+```python
+def classify(features, labels):
+    print("features", features)
+    prompt = (
+        f"This is a classification task.\\n\\n"
+        f"The possible labels are {labels}.\\n\\n"
+        f"The features are {features}.\\n\\n"
+        "Your answer MUST be of the form (one line per feature): `FEATURE=>LABEL\\n`"
+    )
+
+    completion_str = invoke_llm(prompt)
+    completion_pairs = [line.split("=>") for line in completion_str.strip().split("\\n")]
+    valid_pairs = [
+        (feature, label)
+        for feature, label in completion_pairs
+        if len(feature) > 0 and len(label) > 0
+    ]
+
+    corrected_pairs = filter_and_correct_labels(valid_pairs, labels, labels[0])
+
+    return dict(corrected_pairs)
+```
+
+
+---
 layout: two-cols
 ---
 
