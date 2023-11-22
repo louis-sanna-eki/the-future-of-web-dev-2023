@@ -103,6 +103,38 @@ The Vercel AI SDK is a library for building AI-powered streaming text and chat U
 
 [ai by Vercel on NPM](https://www.npmjs.com/package/ai)
 
+
+---
+---
+
+# Streaming LangChain with FastAPI
+
+
+```python
+import asyncio
+import os
+from typing import AsyncIterable, Awaitable
+from fastapi import FastAPI, StreamingResponse
+from langchain.chat_models import ChatOpenAI
+from langchain.callbacks import AsyncIteratorCallbackHandler
+from langchain.schema import HumanMessage
+from pydantic import BaseModel
+
+# Async function to handle message streaming
+async def send_message(message: str) -> AsyncIterable[str]:
+    callback = AsyncIteratorCallbackHandler()
+    model = ChatOpenAI(streaming=True, verbose=True, callbacks=[callback])
+    task = asyncio.create_task(model.agenerate(messages=[[HumanMessage(content=message)]]))
+    async for token in callback.aiter():
+        yield f"data: {token}\n\n"
+    await task
+
+# FastAPI endpoint for streaming
+@app.post("/stream")
+def stream(body: StreamRequest):
+    return StreamingResponse(send_message(body.message), media_type="text/event-stream")
+```
+
 ---
 ---
 
