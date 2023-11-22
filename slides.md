@@ -86,6 +86,26 @@ layout: two-cols
 ---
 ---
 
+# Vercel AI SDK
+
+The Vercel AI SDK is a library for building AI-powered streaming text and chat UIs.
+
+## Features
+
+- SWR-powered React, Svelte, Vue, and Solid helpers for streaming text responses and building chat and completion UIs.
+- First-class support for LangChain and OpenAI, Anthropic, Cohere, Hugging Face, Fireworks, and Replicate.
+- Node.js, Serverless, and Edge Runtime support.
+- Callbacks for saving completed streaming responses to a database in the same request.
+
+## Tips
+
+- The package is specialized for Next.js, the best way to use it could be to copy-paste some code to use as starting point (for instance the hooks, such as useChat).
+
+[ai by Vercel on NPM](https://www.npmjs.com/package/ai)
+
+---
+---
+
 # Classifier with GPT-3.5-turbo-instruct
 
 ```python
