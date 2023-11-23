@@ -39,7 +39,7 @@ A journey through diverse applications of generative AI, showcasing innovation a
 
 ---
 layout: image-right
-image: /images/table-content.png  # Replace with the actual path to the image
+image: images/table-content.png
 ---
 
 # Table of Contents
