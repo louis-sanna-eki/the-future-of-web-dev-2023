@@ -60,9 +60,12 @@ layout: two-cols
   - Enhanced performance with Edge Network
   - Seamless integration with various frameworks
 
+[Link to Vercel](https://vercel.com)
+[Link to Vercel Dashboard](https://vercel.com/dashboard)
+
 ::right::
 
-<!-- ![Vercel Logo](images/vercel-logo.png) -->
+<img src="/images/vercel-dashboard.png" class="mt-20 rounded shadow" />
 
 ---
 layout: two-cols
@@ -78,10 +81,12 @@ layout: two-cols
 
 ::right::
 
-<!-- ![Next.js Logo](images/nextjs-logo.png) -->
+<img src="/images/next-js.png" class="mt-40 ml-8 rounded shadow" />
+
 
 ---
-layout: two-cols
+layout: image-right
+image: images/tailwind.png
 ---
 
 # Tailwind CSS
@@ -91,10 +96,6 @@ layout: two-cols
   - Responsive design
   - Customizable through configuration
   - Wide range of utilities
-
-::right::
-
-<!-- ![Tailwind CSS Logo](images/tailwindcss-logo.png) -->
 
 ---
 ---
