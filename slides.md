@@ -136,6 +136,7 @@ layout: two-cols
   - React Server Components for dynamic rendering
 
 [Link to demo](https://nextjs-todo-app-theta-flame.vercel.app/)
+[Link to code](https://github.com/louis-sanna-eki/nextjs-todo-app)
 
 ::right::
 
@@ -143,6 +144,8 @@ layout: two-cols
 
 ---
 ---
+
+# Server action
 
 ```javascript
 function CardWithForm() {
