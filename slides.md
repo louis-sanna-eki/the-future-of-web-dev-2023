@@ -62,7 +62,7 @@ layout: two-cols
 
 ::right::
 
-![Vercel Logo](images/vercel-logo.png)
+<!-- ![Vercel Logo](images/vercel-logo.png) -->
 
 ---
 layout: two-cols
@@ -78,7 +78,7 @@ layout: two-cols
 
 ::right::
 
-![Next.js Logo](images/nextjs-logo.png)
+<!-- ![Next.js Logo](images/nextjs-logo.png) -->
 
 ---
 layout: two-cols
@@ -94,23 +94,7 @@ layout: two-cols
 
 ::right::
 
-![Tailwind CSS Logo](images/tailwindcss-logo.png)
-
----
-layout: two-cols
----
-
-# React Server Components
-
-- **Description**: Enhance React apps with server-rendered components for better performance.
-- **Key Features**:
-  - Reduced bundle size
-  - Server-side rendering capabilities
-  - Seamless integration with React applications
-
-::right::
-
-![React Logo](images/react-logo.png)
+<!-- ![Tailwind CSS Logo](images/tailwindcss-logo.png) -->
 
 ---
 layout: two-cols
@@ -126,7 +110,18 @@ layout: two-cols
 
 ::right::
 
-![Shadcn UI Logo](images/shadcn-ui-logo.png)
+<!-- ![Shadcn UI Logo](images/shadcn-ui-logo.png) -->
+
+---
+---
+
+# React Server Components
+
+- **Description**: Enhance React apps with server-rendered components for better performance.
+- **Key Features**:
+  - Reduced bundle size
+  - Server-side rendering capabilities
+  - Seamless integration with React applications
 
 ---
 layout: two-cols
@@ -139,6 +134,8 @@ layout: two-cols
   - Serverless backend with Vercel
   - Frontend using Next.js and Tailwind CSS
   - React Server Components for dynamic rendering
+
+[Link to demo](https://nextjs-todo-app-theta-flame.vercel.app/)
 
 ::right::
 
