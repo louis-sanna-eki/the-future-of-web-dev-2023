@@ -136,9 +136,11 @@ layout: two-cols
   - Customizable themes
   - Built for performance and usability
 
+[Link to library](https://ui.shadcn.com/)
+
 ::right::
 
-<!-- ![Shadcn UI Logo](images/shadcn-ui-logo.png) -->
+<img src="/images/shadcn.png" class="mt-20 rounded shadow" />
 
 ---
 ---
@@ -163,12 +165,12 @@ layout: two-cols
   - Frontend using Next.js and Tailwind CSS
   - React Server Components for dynamic rendering
 
-[Link to demo](https://nextjs-todo-app-theta-flame.vercel.app/)
-[Link to code](https://github.com/louis-sanna-eki/nextjs-todo-app)
+- [Link to demo](https://nextjs-todo-app-theta-flame.vercel.app/)
+- [Link to code](https://github.com/louis-sanna-eki/nextjs-todo-app)
 
 ::right::
 
-<img src="/images/nextjs-todo-app-screenshot.png" class="h-80 rounded shadow" />
+<img src="/images/nextjs-todo-app-screenshot.png" class="mt-20 rounded shadow" />
 
 ---
 ---
