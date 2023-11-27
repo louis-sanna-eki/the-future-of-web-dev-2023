@@ -243,9 +243,28 @@ layout: two-cols
 <img src="/images/nextjs-todo-app-screenshot.png" class="mt-20 rounded shadow" />
 
 ---
+layout: center
 ---
 
-# Server action
+# Understanding Server Actions in React
+
+Server actions in React are operations that are performed on the server rather than in the user's browser. This approach can significantly enhance the performance and security of an application.
+
+### How Does It Work?
+
+Server actions are typically written in a Node.js environment and can be triggered by client components through API calls or form submissions. They can perform tasks such as:
+
+- Fetching data from a database
+- Writing data to a database
+- Performing computations
+- Accessing third-party APIs with secret credentials
+
+By intelligently dividing responsibilities between client and server, React applications can become more scalable and maintainable.
+
+---
+---
+
+# Server action: example code
 
 ```javascript
 function CardWithForm() {
