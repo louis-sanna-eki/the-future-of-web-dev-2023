@@ -97,6 +97,22 @@ layout: two-cols
 <!-- ![Tailwind CSS Logo](images/tailwindcss-logo.png) -->
 
 ---
+---
+
+# Tailwind example
+
+{{CODE}}html
+<div class="container mx-auto px-4">
+  <div class="bg-blue-500 text-white text-center p-6 rounded-lg shadow-lg">
+    <h1 class="text-3xl font-bold mb-2">Welcome to Tailwind CSS</h1>
+    <p class="text-lg">Rapidly build modern websites without ever leaving your HTML.</p>
+    <button class="mt-4 bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
+      Get Started
+    </button>
+  </div>
+</div>
+
+---
 layout: two-cols
 ---
 
