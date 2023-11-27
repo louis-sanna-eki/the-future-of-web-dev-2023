@@ -140,7 +140,7 @@ layout: two-cols
 
 ::right::
 
-[![Next.js Todo App](images/nextjs-todo-app-screenshot.png)](https://nextjs-todo-app-theta-flame.vercel.app/)
+<img src="/images/nextjs-todo-app-screenshot.png" class="h-80 rounded shadow" />
 
 ---
 ---
