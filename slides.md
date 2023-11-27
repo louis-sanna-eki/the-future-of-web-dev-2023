@@ -159,29 +159,32 @@ image: images/server-component.png
 - https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns
 
 ---
-layout: two-cols-header
 ---
 
-# Server vs Client Components in React
+<div class="slide two-cols-header">
+  <h1>Server vs Client Components in React</h1>
+  <div>
+    <h2>Server Component</h2>
+    <ul>
+      <li>Fetch data</li>
+      <li>Access backend resources (directly)</li>
+      <li>Keep sensitive information on the server (access tokens, API keys, etc)</li>
+      <li>Keep large dependencies on the server / Reduce client-side JavaScript</li>
+    </ul>
+  </div>
+  <br/>
+  <div>
+    <h2>Client Component</h2>
+    <ul>
+      <li>Add interactivity and event listeners (onClick(), onChange(), etc)</li>
+      <li>Use State and Lifecycle Effects (useState(), useReducer(), useEffect(), etc)</li>
+      <li>Use browser-only APIs</li>
+      <li>Use custom hooks that depend on state, effects, or browser-only APIs</li>
+      <li>Use React Class components</li>
+    </ul>
+  </div>
+</div>
 
-::left::
-
-### Server Component
-
-- Fetch data
-- Access backend resources (directly)
-- Keep sensitive information on the server (access tokens, API keys, etc)
-- Keep large dependencies on the server / Reduce client-side JavaScript
-
-::right::
-
-### Client Component
-
-- Add interactivity and event listeners (onClick(), onChange(), etc)
-- Use State and Lifecycle Effects (useState(), useReducer(), useEffect(), etc)
-- Use browser-only APIs
-- Use custom hooks that depend on state, effects, or browser-only APIs
-- Use React Class components
 
 ---
 layout: two-cols
