@@ -264,7 +264,7 @@ By intelligently dividing responsibilities between client and server, React appl
 ---
 ---
 
-# Server action: example code
+# Server action: code
 
 ```javascript
 function CardWithForm() {
@@ -294,3 +294,23 @@ function CardWithForm() {
   )
 }
 ```
+
+---
+---
+
+# Web Development: Insights and Perspectives
+
+Explore influential insights on the latest in web development from industry experts.
+
+- [The Web’s Next Transition](https://www.epicweb.dev/the-webs-next-transition) - Kent C. Dodds
+- [Why I Won't Use Next.js](https://www.epicweb.dev/why-i-wont-use-next-js) - Kent C. Dodds
+- [CSS Utility Classes and "Separation of Concerns"](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/) - Adam Wathan
+- ["React from Another Dimension" by Dan Abramov at #RemixConf 2023 💿](https://www.youtube.com/watch?app=desktop&v=zMf_xeGPn6s) - Dan Abramov
+
+---
+layout: center
+---
+
+<img src="/images/cutedog.png" with="100%" height="100%" position="absolute" top="0" left="0"/>
+<div position="relative" color="#15293B" top="-200px">
+</div>
