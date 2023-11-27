@@ -154,6 +154,45 @@ layout: two-cols
   - Seamless integration with React applications
 
 ---
+layout: two-cols-header
+---
+
+# Server vs Client Components in React
+
+::left::
+
+### Server Component
+
+- Fetch data
+- Access backend resources (directly)
+- Keep sensitive information on the server (access tokens, API keys, etc)
+- Keep large dependencies on the server / Reduce client-side JavaScript
+
+::right::
+
+### Client Component
+
+- Add interactivity and event listeners (onClick(), onChange(), etc)
+- Use State and Lifecycle Effects (useState(), useReducer(), useEffect(), etc)
+- Use browser-only APIs
+- Use custom hooks that depend on state, effects, or browser-only APIs
+- Use React Class components
+
+---
+layout: two-cols
+---
+
+# Composition patterns
+
+- More info: 
+  - https://www.joshwcomeau.com/react/server-components/
+  - https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns
+
+::right::
+
+<img src="/images/client-server-boundary.png" class="mt-20 rounded shadow" />
+
+---
 layout: two-cols
 ---
 
