@@ -101,7 +101,7 @@ layout: two-cols
 
 # Tailwind example
 
-{{CODE}}html
+```html
 <div class="container mx-auto px-4">
   <div class="bg-blue-500 text-white text-center p-6 rounded-lg shadow-lg">
     <h1 class="text-3xl font-bold mb-2">Welcome to Tailwind CSS</h1>
@@ -111,6 +111,7 @@ layout: two-cols
     </button>
   </div>
 </div>
+``````
 
 ---
 layout: two-cols
