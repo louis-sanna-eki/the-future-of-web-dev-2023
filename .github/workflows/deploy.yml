@@ -13,7 +13,7 @@ jobs:
       - name: Install Slidev and required theme
         run: npm install -g @slidev/cli @slidev/theme-seriph
       - name: Build
-        run: slidev build --base gen-ai-retex-slides
+        run: slidev build --base the-future-of-web-dev-2023
       - name: Deploy pages
         uses: crazy-max/ghaction-github-pages@v2
         with:

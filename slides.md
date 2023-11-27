@@ -20,7 +20,7 @@ drawings:
 transition: fade-out
 # use UnoCSS
 css: unocss
-download: https://louis-sanna-eki.github.io/gen-ai-retex-slides/export/slides-export.pdf
+download: https://louis-sanna-eki.github.io/the-future-of-web-dev-2023/export/slides-export.pdf
 favicon: images/eki-favicon.png
 ---
 
@@ -33,6 +33,20 @@ Exploring the forefront of web development with technologies like Vercel, Next.j
     Dive into Next.js, Tailwind CSS, and more <carbon:arrow-right class="inline"/>
   </span>
 </div>
+
+---
+layout: image-right
+image: images/web-dev-toc-image.png
+---
+
+# Table of Contents
+
+1. **Vercel**: Frontend platform for performance and scaling.
+2. **Next.js**: Server rendering and static site generation.
+3. **Tailwind CSS**: Utility-first CSS framework.
+5. **Shadcn UI**: Modern UI library for design and functionality.
+4. **React Server Components**: Enhanced performance in React apps.
+6. **Next.js Todo App Demo**: Practical application of these technologies.
 
 ---
 layout: two-cols
