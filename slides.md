@@ -60,8 +60,8 @@ layout: two-cols
   - Enhanced performance with Edge Network
   - Seamless integration with various frameworks
 
-[Link to Vercel](https://vercel.com)
-[Link to Vercel Dashboard](https://vercel.com/dashboard)
+- [Link to Vercel](https://vercel.com)
+- [Link to Vercel Dashboard](https://vercel.com/dashboard)
 
 ::right::
 
