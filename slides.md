@@ -143,6 +143,8 @@ layout: two-cols
 <img src="/images/shadcn.png" class="mt-20 rounded shadow" />
 
 ---
+layout: image-right
+image: images/server-component.png
 ---
 
 # React Server Components
