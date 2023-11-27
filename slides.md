@@ -155,6 +155,9 @@ image: images/server-component.png
   - Server-side rendering capabilities
   - Seamless integration with React applications
 
+- https://www.joshwcomeau.com/react/server-components/
+- https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns
+
 ---
 layout: two-cols-header
 ---
@@ -186,9 +189,32 @@ layout: two-cols
 
 # Composition patterns
 
-- More info: 
-  - https://www.joshwcomeau.com/react/server-components/
-  - https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns
+```javascript
+import React from 'react';
+
+// Server Component
+function App() {
+  return <><Header /><Article /></>;
+}
+
+// Server Component
+function Header() {
+  return <header>Header Content</header>;
+}
+
+// Client Component
+function Article() {
+  "use client" //directive
+  return <div><HitCounter /><Discussion /></div>;
+}
+
+// Client Component
+function HitCounter() {
+  return <div>Hit Counter</div>;
+}
+
+// rest of the app...
+```
 
 ::right::
 
